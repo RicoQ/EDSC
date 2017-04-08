@@ -11,10 +11,10 @@ def Scan(ifname):
 	return h
 
 def V6DScan():
-	V6D =[
-    #("fe80::","PC-Win10"),
+    V6D =[
+    ("fe80::e00a:ee16:8248:7ee0","PC-Win10"),
     #("fe80::","rpi2-Kali"),
-		#("fe80::","rpi2-Raspbian"),
+    ("fe80::46c6:b67d:71f:3f80","rpi2-Raspbian"),
     #("fe80::","rpi3-LibreELEC"),
     ("ff02::1"   ,"IPv6 All-Nodes Multicast"),
 		("ff02::2"   ,"IPv6 All-Routers Multicast"),
@@ -38,51 +38,55 @@ def V6DScan():
     return V6D
 
 def NetScan():
-   Hosts = [("192.168.255.255","Inner-192.168-Brd-Cast"),
-		 ("255.255.255.255","Local Brd Cast"),
-		 ("224.0.0.0","Base address (reserved)"),
-		 ("224.0.0.252","All Routers multicast"),
-		 ("224.0.0.254","Distance Vector Multicast Routing"),
-		 ("224.0.0.1","All Hosts Multicast (On Same Network)"),
-		 ("224.0.0.2","All Routers multicast (On Same Network)"),
-		 ("224.0.0.4","Distance Vector Multicast Routing Protocol (DVMRP)"),
-		 ("224.0.0.5","Open Shortest Path First Routing (OSPF)"),
-		 ("224.0.0.6","All Designated Routers (OSPF)"),
-		 ("224.0.0.9","Routing Information"),
-		 ("224.0.0.10","Interior Gateway Routing (EIGRP)"),
-		 ("224.0.0.13","Independent Multicast (PIM-V2)"),
-		 ("224.0.0.18","Virtual Router Redundancy (VRRP)"),
-		 ("224.0.0.19","IS-IS over IP (19)"),
-		 ("224.0.0.20","IS-IS over IP (20)"),
-		 ("224.0.0.21","IS-IS over IP (21)"),
-		 ("224.0.0.22","Internet Group Management (IGMP-V3)"),
-		 ("224.0.0.102","HSRPv2 and GLBP"), #(HSRPv2)=Hot Standby Router Protocol v2 and (GLBP)=Gateway Load Balancing Protocol
-		 ("224.0.0.107","Precision Time Protocol (PTP-V2)"),
-		 ("224.0.0.251","Multicast DNS (mDNS)"),
-		 ("224.0.0.252","Link-local Multicast Name Resolution (LLMNR)"),
-	   ("224.0.0.253","Teredo tunneling client discovery"),
-		 ("224.0.1.1","Network Time Protocol listening"),
-		 ("224.0.1.22","Service Location v1 (general)"),
-		 ("224.0.1.35","Service Location v1 (directory agent)"),
-		 ("224.0.1.39","CISCO AUTO-RP-ANNOUNCE (MultiCast)"),
-		 ("224.0.1.40","CISCO AUTO-RP-DISCOVERY (MultiCast)"),
-		 ("224.0.1.41","H.323 Gatekeeper discovery)"),
-		 ("224.0.1.129","Precision Time (PTP v1&v2) 29"),
-		 ("224.0.1.130","Precision Time (PTP v1) 30"),
-		 ("224.0.1.131","Precision Time (PTP v1) 31"),
-		 ("224.0.1.132","Precision Time (PTP v1) 32"),
-		 ("239.255.255.250","Simple Service Discovery (SSDP)"),
-		 ("239.255.255.253","Service Location v2")]
+	print "Net Scan"
+        Hosts = [("192.168.255.255","Inner-192.168-Brd-Cast"),
+	    ("192.168.5.255","Inner NetBIOS Name Service BroadCast"),
+  	    ("255.255.255.255","Local Brd Cast"),
+	    ("224.0.0.0","Base address (reserved)"),
+	    ("224.0.0.252","All Routers multicast"),
+	    ("224.0.0.254","Distance Vector Multicast Routing"),
+	    ("224.0.0.1","All Hosts Multicast (On Same Network)"),
+	    ("224.0.0.2","All Routers multicast (On Same Network)"),
+	    ("224.0.0.4","Distance Vector Multicast Routing Protocol (DVMRP)"),
+	    ("224.0.0.5","Open Shortest Path First Routing (OSPF)"),
+	    ("224.0.0.6","All Designated Routers (OSPF)"),
+	    ("224.0.0.9","Routing Information"),
+	    ("224.0.0.10","Interior Gateway Routing (EIGRP)"),
+	    ("224.0.0.13","Independent Multicast (PIM-V2)"),
+	    ("224.0.0.18","Virtual Router Redundancy (VRRP)"),
+	    ("224.0.0.19","IS-IS over IP (19)"),
+	    ("224.0.0.20","IS-IS over IP (20)"),
+	    ("224.0.0.21","IS-IS over IP (21)"),
+	    ("224.0.0.22","Internet Group Management (IGMP-V3)"),
+	    ("224.0.0.102","HSRPv2 and GLBP"), #(HSRPv2)=Hot Standby Router Protocol v2 and (GLBP)=Gateway Load Balancing Protocol
+	    ("224.0.0.107","Precision Time Protocol (PTP-V2)"),
+	    ("224.0.0.251","Multicast DNS (mDNS)"),
+	    ("224.0.0.252","Link-local Multicast Name Resolution (LLMNR)"),
+            ("224.0.0.253","Teredo tunneling client discovery"),
+	    ("224.0.1.1","Network Time Protocol listening"),
+	    ("224.0.1.22","Service Location v1 (general)"),
+	    ("224.0.1.35","Service Location v1 (directory agent)"),
+	    ("224.0.1.39","CISCO AUTO-RP-ANNOUNCE (MultiCast)"),
+	    ("224.0.1.40","CISCO AUTO-RP-DISCOVERY (MultiCast)"),
+	    ("224.0.1.41","H.323 Gatekeeper discovery)"),
+	    ("224.0.1.129","Precision Time (PTP v1&v2) 29"),
+	    ("224.0.1.130","Precision Time (PTP v1) 30"),
+	    ("224.0.1.131","Precision Time (PTP v1) 31"),
+	    ("224.0.1.132","Precision Time (PTP v1) 32"),
+	    ("239.255.255.250","Simple Service Discovery (SSDP)"),
+	    ("239.255.255.253","Service Location v2")]
 	LocIP = Scan('lo')
         msg = ('(\"'+str(LocIP)+'\" , \"[LocalHost Loop]\"'+')')
-        a = (str(LocIP))
+        #print msg
+	a = (str(LocIP))
         b = (str("LocalHost"))
         c = ((a,b))
         Hosts.append(c)
-	eth0 = 'enxb827eb00cead'
+	#eth0 = 'enxb827eb00cead'
+	eth0 = 'eth0'
         HostIP  = Scan(str(eth0))
         nm = nmap.PortScanner()
-        mac = nm.scan('192.168.1.0/24', arguments='-sP')
+        mac = nm.scan('192.168.5.0/24', arguments='-sP')
         for h in nm.all_hosts():
 		#print "IP Found on the Network = " + str(h)
                 if (nm[h]['addresses']['ipv4']) == str(HostIP):
@@ -95,7 +99,7 @@ def NetScan():
 			MSG = ' IP Address Found on the Network= '+C.O+str(a)+C.W
 			MSG += ' With Mac Address= '+C.P+str(MACa).lower()+C.W
                         b = (str(HostNames[0]))
-			MSG += ' and HostName = '+C.T+str(b)+C.W
+			MSG += ' and HostName = '+C.B+str(b)+C.W
                         c = ((a,b))
                         Hosts.append(c)
 			print MSG
@@ -108,23 +112,25 @@ def NetScan():
 			MSG = ' IP Address Found on the Network= '+C.O+str(a)+C.W
                         MSG += ' With Mac Address= '+C.P+(str(nm[h]['addresses']['mac'])).lower()+C.W
                         b = (str(HostNames[0]))
-			MSG += ' and HostName = '+C.T+str(b)+C.W
+			MSG += ' and HostName = '+C.B+str(b)+C.W
                         c = ((a,b))
 			print MSG
                         Hosts.append(c)
 	return Hosts
 
 def MacScan():
+	print "\nChecking SCAN with Mac Address"
 	Mac =[("ff:ff:ff:ff:ff:ff","Mac {Local Brd Cast}"),
               ("00:00:00:00:00:00","Mac {LocalHost}"),
               ("33:33:00:00:00:01","Mac {All-Nodes-MultiCast}"),
 	      ("33:33:00:00:00:02","Mac {All-Routers-Multicast}"),
 	      ("00:07:cb:03:9d:29","SlickR-Svr (Server VPN)"),
 	      ("01:80:c2:00:00:0e","LLDP_Multicast")]
-	eth0 = str('enxb827eb00cead')
+	#eth0 = str('enxb827eb00cead')
+	eth0 = str('eth0')
 	HostIP  = Scan(str(eth0))
         nm = nmap.PortScanner()
-        mac = nm.scan('192.168.1.0/24', arguments='-sP')
+        mac = nm.scan('192.168.5.0/24', arguments='-sP')
         for h in nm.all_hosts():
 		#print h
                 if (nm[h]['addresses']['ipv4']) == str(HostIP):
@@ -137,14 +143,25 @@ def MacScan():
                         b = (str(HostNames[0]))
                         c = ((a,b))
                         Mac.append(c)
+			MSG = 'Cheking Address Mac= '+C.P+str(a)+C.W
+                        MSG += ' With HostName= '+C.B+str(b).lower()+C.W
+			MSG += '\t = '+C.G+'OK'+C.W
+			print MSG
+
                 elif 'mac' in nm[h]['addresses']:
                         HostNames = (nm[h]['hostname'])
                         HostNames = HostNames.split(".home")
                         msg = ('(\"'+str(nm[h]['addresses']['mac'])+'\" , \"'+str(HostNames[0])+'\")')
-                        a = (str(nm[h]['addresses']['mac'])).lower()
+                   	#print msg
+     			a = (str(nm[h]['addresses']['mac'])).lower()
 			b = (str(HostNames[0]))
                         c = ((a,b))
                         Mac.append(c)
+			MSG = 'Cheking Address Mac= '+C.P+str(a)+C.W
+                        MSG += ' With HostName= '+C.B+str(b).lower()+C.W
+                        MSG += '\t = '+C.G+'OK'+C.W
+                        print MSG
+
 	return Mac
 
 def mac_for_ip(ip):

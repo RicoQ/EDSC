@@ -65,15 +65,15 @@ NTPserveurList=[("193.190.230.65" , "NTP Server {ntp1.oma.be}"), 	#ntp1.oma.be
 		("63.145.169.3"   , "NTP Server {gpstime.la}"),        	#gpstime.la-archdiocese.net
 		("128.252.19.1"   , "NTP Server {navobs1.wustl.edu"),] 	#navobs1.wustl.edu
 
-ARPTypes=[("0","Reserved"), 	("1","REQUEST"), 	("2","REPLY"),		("3","request Reverse"),
-	("4","reply Reverse"),	("5","DRARP-Request"),	("6","DRARP-Reply"),	("7","DRARP-Error"),
-	("8","InARP-Request"),	("9","InARP-Reply"),	("10","ARP-NAK"),	("11","MARS-Request"),
-	("12","MARS-Multi"),	("13","MARS-MServ"),	("14","MARS-Join"),	("15","MARS-Leave"),
-	("16","MARS-NAK"),	("17","MARS-Unserv"),	("18","MARS-SJoin"),	("19","MARS-SLeave"),
-	("20","MARS-Grouplist-Request"),	("21","MARS-Grouplist-Reply"),	("22","MARS-Redirect-Map"),
-	("23","MAPOS-UNARP"),	("24","OP_EXP1"),	("25","OP_EXP2")]
+ARPTypes=[("0","Reserved"), 	 ("1","REQUEST"), 	("2","REPLY"),		("3","request Reverse"),
+	("4","reply Reverse"),	 ("5","DRARP-Request"),	("6","DRARP-Reply"),	("7","DRARP-Error"),
+	("8","InARP-Request"),	 ("9","InARP-Reply"),	("10","ARP-NAK"),	("11","MARS-Request"),
+	("12","MARS-Multi"),	 ("13","MARS-MServ"),	("14","MARS-Join"),	("15","MARS-Leave"),
+	("16","MARS-NAK"),	 ("17","MARS-Unserv"),	("18","MARS-SJoin"),	("19","MARS-SLeave"),
+	("20","MARS-GL-Request"),("21","MARS-GL-Reply"),("22","MARS-Redirect-Map"),
+	("23","MAPOS-UNARP"),	 ("24","OP_EXP1"),	("25","OP_EXP2")]
 
-EthTypes=[(hex(0x0800),"IPv4"), (hex(0x0806),"ARP"),            (hex(0x0842),"Wake-on-Lan"),
+EthTypes=[(hex(0x0800),"IPv4"), 	(hex(0x0806),"ARP"),            (hex(0x0842),"Wake-on-Lan"),
 	(hex(0x22f3),"IETF"),           (hex(0x6003),"DECnet"),         (hex(0x8035),"Reverse ARP"),
         (hex(0x80f3),"AppleTalk(ARP)"), (hex(0x8100),"VLAN-Tagged"),    (hex(0x809b),"AppleTalk(Ethertalk)"),
         (hex(0x8137),"IPX"),            (hex(0x8204),"QNX Qnet"),       (hex(0x86dd),"IPv6"),
@@ -86,9 +86,9 @@ EthTypes=[(hex(0x0800),"IPv4"), (hex(0x0806),"ARP"),            (hex(0x0842),"Wa
         (hex(0x88e1),"HomePlug AV MME"),(hex(0x88e7),"PBB"),            (hex(0x88ab),"Ethernet PowerLink"),
         (hex(0x88f7),"PTP"),            (hex(0x8902),"CFM"),            (hex(0x8906),"FCoE"),
         (hex(0x8914),"FCoE ini"),       (hex(0x8915),"RoCE"),           (hex(0x892f),"HSR"),
-        (hex(0x9000),"Ethernet Test")]
+	(hex(0x88d9),"MS-LLDP"),	(hex(0x9000),"Ethernet Test")]
 
-ProtoTypes=[(hex(0x00),"HOPOPT"),(hex(0x01),"ICMP"),            (hex(0x02),"IGMP"),             (hex(0x03),"GGP"),
+ProtoTypes=[(hex(0x00),"HOPOPT"),	(hex(0x01),"ICMP"),            	(hex(0x02),"IGMP"),             (hex(0x03),"GGP"),
 	(hex(0x04),"IP-in-IP"),         (hex(0x05),"IST"),              (hex(0x06),"TCP"),              (hex(0x07),"CBT"),
         (hex(0x08),"EGP"),              (hex(0x09),"IGP"),              (hex(0x23),"IDPR"),             (hex(0x0A),"BBN-RCC-MON"),
         (hex(0x0B),"NVP-II"),           (hex(0x0C),"PUP"),              (hex(0x0D),"ARGUS"),            (hex(0x0E),"EMCON"),
@@ -145,12 +145,12 @@ PortCur=[("22","Putty"),
 	 ("29","MSG ICP"),
  	 ("37","Time"),
 	 ("42","Host Name Server (NameServ)"),
-   #("43","WhoIs"),
+   	 #("43","WhoIs"),
 	 ("49","Login Host Protocol (Login)"),
 	 ("53","Domain Name System (DNS)"),
 	 #("69","Trivial File Transfer Protocol (TFTP)"),
 	 ("70","Gopher Services"),
-   ("79","Finger"),
+         ("79","Finger"),
 	 ("80","Http"),
 	 ("103","X.400 Standard"),
 	 ("108","SNA Gateway Access Server"),
@@ -454,7 +454,7 @@ PortUnCur=[("0","Reserved"),
 	   #("1002","	TCP		Opsware agent (aka cogbot)	Unofficial
 	   #("1010","	ThinLinc Web Administration	Unofficial
 	   ("1023","Reserved"), # = Official
-	   ("99999","Make-Shift Dict Entry"] # = Make-Shift Dict Entry to simulate the END of PortUnCur
+	   ("99999","Make-Shift Dico Entry")] # = Make-Shift Dico Entry to simulate the END of PortUnCur
 
 IPv4flags=[("toto","tata")]
 

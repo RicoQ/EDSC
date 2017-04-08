@@ -135,7 +135,7 @@ def RevDNS1(pkt,Hosts,Eth,Mac,V6,uipa):
 	try:
 		name, alias, addresslist = socket.gethostbyaddr(uipa)
 		#print '***** Rev DNS 1 Info (try) *****'
-		#print uipa
+		print uipa
 		#print 'name: '+str(name)
 		#print 'alias: '+str(alias)
 		#print 'address'+str(addresslist)

@@ -6,7 +6,6 @@ from MsgMod import fordebugmsg as FDM
 
 def Test(Num,pkt,Eth,Proto,Port):
         if Eth == "IPv4":
-                Eth == "IP"
                 if Proto == "TCP":
                         if Port == "Putty": pass #InnerMsg(pkt)
                         else: FDM(Num,pkt,Eth,Proto,Port)
